@@ -15,7 +15,7 @@ public class Helper {
 	public static Statement getStatement() {
 		try {
 			Class.forName("org.postgresql.Driver");
-			Helper.connection = DriverManager.getConnection("jdbc:postgres://172.27.176.1:5432/test_JDBC","postgres","pass123");
+			Helper.connection = DriverManager.getConnection("jdbc:postgres://localhost/test_JDBC","postgres","pass123");
 			Helper.statement = Helper.connection.createStatement();
 			return Helper.statement;
 		} catch (ClassNotFoundException | SQLException e) {
@@ -27,7 +27,7 @@ public class Helper {
 	public static PreparedStatement getPreparedStatement(String sql) {
 		try {
 			Class.forName("org.postgresql.Driver");
-			Helper.connection = DriverManager.getConnection("jdbc:postgresql://172.27.176.1:5432/test_JDBC","postgres","pass123");
+			Helper.connection = DriverManager.getConnection("jdbc:postgresql://localhost/test_JDBC","postgres","pass123");
 			Helper.preparedStatement = Helper.connection.prepareStatement(sql);
 			return Helper.preparedStatement;
 		} catch (ClassNotFoundException | SQLException e) {
